@@ -1,33 +1,4 @@
-import { useQuery, gql } from '@apollo/client';
-import { useState } from 'react';
-
-const GET_CHARACTER_INFO = gql`
-  query Characters($page: Int!) {
-    characters(page: $page) {
-      info {
-        count
-        pages
-        next
-        prev
-      }
-      results {
-        id
-        name
-        image
-        type
-        gender
-      }
-    }
-  }
-`;
-
-const CharactersContainer = () => {
-
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const { loading, error, data } = useQuery(GET_CHARACTER_INFO, {
-    variables: { page: currentPage },
-  });
+const CharactersContainer = ({loading, error, data, currentPage, setCurrentPage}) => {
 
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error.message}</p>;
