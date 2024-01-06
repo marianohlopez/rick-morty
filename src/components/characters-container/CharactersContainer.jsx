@@ -1,4 +1,5 @@
-const CharactersContainer = ({loading, error, data, currentPage, setCurrentPage}) => {
+const CharactersContainer = ({loading, error, data, currentPage, setCurrentPage, 
+  setSelectedCharacter, setModalOpen}) => {
 
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -6,11 +7,17 @@ const CharactersContainer = ({loading, error, data, currentPage, setCurrentPage}
   const characters = data.characters.results;
   const pageInfo = data.characters.info;
 
+  const handleCharacterClick = (character) => {
+    setSelectedCharacter(character);
+    setModalOpen(true);
+  };
+
   return (
     <div className='text-center'>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 w-3/4 mx-auto">
         {characters.map((character) => (
-          <div key={character.id} className='relative w-auto'>
+          <div key={character.id} className='relative w-auto cursor-pointer' 
+          onClick={() => handleCharacterClick(character)}>
             <img src={character.image} alt={character.name} className="w-full h-auto rounded-md" />
             <p className="absolute bottom-0 w-full text-white text-center p-2">{character.name}</p>
           </div>
