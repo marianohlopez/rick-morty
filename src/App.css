@@ -6,3 +6,34 @@
 body {
   background-color: black;
 }
+
+.textImage {
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+@media (max-width: 640px) {
+
+  .species,
+  .gender,
+  .resetFilters {
+    margin-left: 4px;
+  }
+
+  .characterModal {
+    max-width: 50vw;
+  }
+}
+
+@media (max-width: 516px) {
+
+  .resetFilters {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .gender {
+    margin-left: 0;
+  }
+}

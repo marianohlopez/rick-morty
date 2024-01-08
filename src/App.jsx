@@ -61,13 +61,13 @@ function App() {
       <Filters GET_CHARACTER_INFO = {GET_CHARACTER_INFO} selectedGender = {selectedGender}
         setSelectedGender = {setSelectedGender} selectedSpecies = {selectedSpecies} 
         setSelectedSpecies = {setSelectedSpecies} selectedStatus = {selectedStatus}
-        setSelectedStatus = {setSelectedStatus} />
+        setSelectedStatus = {setSelectedStatus} setSearchName = {setSearchName} />
       <CharactersContainer loading = {loading} error = {error} data = {data} currentPage = {currentPage}
         setCurrentPage = {setCurrentPage} setSelectedCharacter = {setSelectedCharacter} 
         setModalOpen = {setModalOpen}/>
       {selectedCharacter && 
       <CharacterModal selectedCharacter = {selectedCharacter} setSelectedCharacter = {setSelectedCharacter}
-        modalOpen = {modalOpen} />}
+        modalOpen = {modalOpen} setModalOpen = {setModalOpen} />}
     </>
   )
 }

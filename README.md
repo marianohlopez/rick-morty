@@ -1,7 +1,7 @@
 # Desafío para Dev
 
-Nombre postulante: Mariano Hugo Lopez
-Link a la app en producción: [LINK DEL DEPLOY]
+- Nombre postulante: Mariano Hugo Lopez
+- Link a la app en producción: https://rick-morty-chi-sepia.vercel.app/
 
 ## Instrucciones
 

@@ -7,7 +7,7 @@ const SearchBar = ({searchName, setSearchName}) => {
         placeholder="Search characters by name..."
         value={searchName}
         onChange={(e) => setSearchName(e.target.value)}
-        className="text-white p-2 mb-4 bg-black sm:w-full border border-white rounded-xl"
+        className="text-white p-2 mb-4 bg-black w-full border border-white rounded-xl"
       />
     </div>
   )

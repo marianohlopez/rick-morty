@@ -1,9 +1,11 @@
 import ReactModal from "react-modal";
 
 const CharacterModal = ({selectedCharacter, setSelectedCharacter, modalOpen, setModalOpen}) => {
+
+  ReactModal.setAppElement('#root');
   
   const closeModal = () => {
-    setSelectedCharacter(null);
+    setSelectedCharacter(null)
     setModalOpen(false)
   };
 
@@ -20,16 +22,16 @@ const CharacterModal = ({selectedCharacter, setSelectedCharacter, modalOpen, set
           bottom: 'auto',
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)',
-          maxHeight:"auto",
+          maxHeight:'auto',
           padding:0,
-          borderColor:"black",
-          background:"black",
+          borderColor:'black',
+          background:'black',
           overflow: 'hidden',
         },
       }}
       isOpen={modalOpen} onRequestClose={closeModal}>
         {selectedCharacter && (
-        <div className="flex relative">
+        <div className="flex relative  flex-wrap characterModal">
           <button 
             className="absolute top-0 right-0 p-3 cursor-pointer"
             onClick={closeModal}
@@ -40,10 +42,11 @@ const CharacterModal = ({selectedCharacter, setSelectedCharacter, modalOpen, set
               <span className="text-sm font-semibold">X</span>
             </div>
           </button>
-          <div className="w-52">
+          <div className="sm:w-52 w-full">
             <img src={selectedCharacter.image} alt={selectedCharacter.name} className="w-full rounded-md" />
           </div>
-          <div className="w-72 bg-black text-white text-[0.8rem] p-4 flex flex-col justify-center items-center">
+          <div className="sm:w-72 w-full bg-black text-white text-[0.8rem] p-4 flex flex-col 
+            justify-center items-center">
             <h2 className="font-bold mb-2">{selectedCharacter.name}</h2>
             <p>
               <span className="text-cyan-300">Status: </span>
