@@ -10,6 +10,7 @@ Aplicación frontend realizada con Vite, conectada mediante Graphql a la Api de 
 - Graphql
 - React-dom
 - React-modal
+- Tailwind
 
 Deploy del proyecto:
 https://rick-morty-chi-sepia.vercel.app/
