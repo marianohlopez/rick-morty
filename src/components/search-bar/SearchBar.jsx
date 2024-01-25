@@ -1,4 +1,9 @@
-const SearchBar = ({searchName, setSearchName}) => {
+import { useContext } from "react"
+import { AppContext } from "../../context/AppContext"
+
+const SearchBar = () => {
+
+  const {searchName, setSearchName} = useContext(AppContext);
 
   return (
     <div className="w-3/4 mx-auto mt-8">

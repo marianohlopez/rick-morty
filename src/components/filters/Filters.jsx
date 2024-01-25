@@ -1,5 +1,10 @@
-const Filters = ({selectedGender, setSelectedGender, selectedSpecies, setSelectedSpecies,
-  selectedStatus, setSelectedStatus, setSearchName }) => {
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
+
+const Filters = () => {
+
+  const {selectedGender, setSelectedGender, selectedSpecies, setSelectedSpecies,
+    selectedStatus, setSelectedStatus, setSearchName} = useContext(AppContext);
 
   const resetFilters = () => {
     setSearchName('');

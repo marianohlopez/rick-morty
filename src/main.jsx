@@ -5,7 +5,7 @@ import './index.css'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql', // Reemplaza con la URL real de tu API GraphQL
+  uri: 'https://rickandmortyapi.com/graphql',
   cache: new InMemoryCache(),
 });
 

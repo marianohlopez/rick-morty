@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import ReactModal from "react-modal";
+import { AppContext } from "../../context/AppContext";
 
-const CharacterModal = ({selectedCharacter, setSelectedCharacter, modalOpen, setModalOpen}) => {
+const CharacterModal = () => {
 
   ReactModal.setAppElement('#root');
+
+  const { selectedCharacter, setSelectedCharacter, modalOpen, setModalOpen } = useContext(AppContext);
   
   const closeModal = () => {
     setSelectedCharacter(null)

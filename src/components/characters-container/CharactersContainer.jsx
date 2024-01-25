@@ -1,5 +1,10 @@
-const CharactersContainer = ({loading, error, data, currentPage, setCurrentPage, 
-  setSelectedCharacter, setModalOpen}) => {
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
+
+const CharactersContainer = () => {
+
+  const { loading, error, data, currentPage, setCurrentPage, 
+    setSelectedCharacter, setModalOpen } = useContext(AppContext);
      
   if (loading) return <p className="text-white text-center">Loading...</p>;
   if (error) return <p className="text-white text-center">Error: {error.message}</p>;
